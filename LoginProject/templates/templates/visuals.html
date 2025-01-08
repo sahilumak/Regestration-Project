@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="sidebox">
+    <div style="display: flex;justify-content: center;">
+        <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;padding: 10px;">Expenses {{ Mode }}</h3>
+    </div>
+    <table class="in-table">
+        <thead>
+            <tr>
+                <th class="th">Expense</th>
+                <th class="th">Money</th>
+                <th class="th">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in total %}
+            <tr>
+                <td class="th">{{ i.Expenses }}</td>
+                <td class="th">{{ i.Money }}</td>
+                <td class="th">{{ i.Date }}</td>
+            </tr>
+           {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="sidebox2">
+
+    <div class="Time">
+
+        <button class="visual-btn" id="day">Days</button>
+        <button class="visual-btn" id="week">Weeks</button>
+        <button class="visual-btn" id="Month">Months</button>
+    </div>
+</div>
+
+{% endblock base%}

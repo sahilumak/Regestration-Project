@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="in">
+    <table class="table1">
+        <thead>
+            <tr>
+                <th>Expense</th>
+                <th>Money</th>
+                <th>Date</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in expenses %}
+            <tr>
+                <td>{{ i.expenses}}</td>
+                <td>{{ i.money }}</td>
+                <td>{{ i.time }}</td>
+                <td>{{ i.description }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="rightSide">
+    <div style="display: flex;justify-content: center;">
+        <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;padding: 10px;">Add
+            Expenses</h3>
+    </div>
+    <div>
+        <form id="expenses-form" action='/dashboard' method="POST">
+            <div class="input-group1">
+
+                <input type="text" id="expenses" name="expenses" required placeholder="Enter Expenses">
+            </div>
+
+            <div class="input-group1">
+
+                <input type="money" id="money" name="money" required placeholder="Money">
+            </div>
+            <div class="input-group1">
+
+                <input type="text" id="description" name="description" required placeholder="Enter your description">
+            </div>
+
+            <button class="btn2" type="submit">AddNew</button>
+        </form>
+    </div>
+
+</div>
+</div>
+
+{% endblock base%}

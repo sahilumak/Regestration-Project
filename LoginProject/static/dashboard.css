@@ -1,0 +1,131 @@
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Start off-screen on the left */
+    height: 100%;
+    width: 300px;
+    background-color: #333;
+    color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out; /* Animate the left property */
+    padding: 20px;
+    z-index: 1000;
+}
+
+.side-panel.active {
+    left: 0; /* Slide in to the left edge of the screen */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.logout-btn {
+    display: block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+#th{
+    background-color: rgb(152, 226, 225);
+    border-radius: 20px;  
+    
+}
+.in{
+        padding: 10px;
+        margin: 5px;
+        /* border: 1px solid black; */
+        border-radius: 20px;
+        flex: 1; /* Take up the remaining space */
+        position: absolute; /* Absolute positioning for the first div */
+        top: 60px;
+        left: 30px;
+        width: 75%;
+        height: 710px;
+        
+    }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes full height */
+   
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #201d1d;
+    color: white;
+    /* padding: 10px 20px; */
+    z-index: 1000;/* Stick to the top */
+   
+}
+
+.content {
+    margin-top: 0; /* Will be adjusted by JavaScript */
+}
+.table1{
+
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+.rightSide{
+    border: 1px solid black;
+    width: 20%;
+    height: 350px;
+    position: absolute; /* Absolute positioning for the second div */
+    top: 75px;
+    left: 79%;
+    border-radius: 20px;
+   
+   
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+#expenses-form{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+.input-group1{
+    padding: 10px;
+}
+.btn2{
+    margin: 10px;
+    padding: 10px;
+}
