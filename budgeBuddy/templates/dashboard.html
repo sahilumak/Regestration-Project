@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="in">
+    <table class="table1">
+        <thead>
+            <tr>
+                <th scope="col">Srn</th>
+                <th scope="col">Expense</th>
+                <th scope="col">Money</th>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in expenses %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ i.expenses }}</td>
+                <td>{{ i.money }}</td>
+                <td>{{ i.time }}</td>
+                <td>{{ i.description }}</td>
+                <td>
+                    <a href="/delete/{{ i.id }}">
+                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="rightSide">
+    <div style="display: flex; justify-content: center;">
+        <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding: 10px;">
+            Add Expenses
+        </h3>
+    </div>
+    <div>
+        <form id="expenses-form" action="/dashboard" method="POST">
+            <div class="input-group1">
+                <input type="text" id="expenses" name="expenses" required placeholder="Enter Expenses">
+            </div>
+            <div class="input-group1">
+                <input type="number" id="money" name="money" required placeholder="Money">
+            </div>
+            <div class="input-group1">
+                <input type="datetime-local" id="time" name="time" required placeholder="Date">
+            </div>
+            <div class="input-group1">
+                <input type="text" id="description" name="description" required placeholder="Enter your description">
+            </div>
+            <button class="btn2" type="submit">Add New</button>
+        </form>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <h3 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding: 10px;">
+            Total Money:
+        </h3>
+    </div>
+    <div style="border: 1px solid rgb(14, 14, 14); border-radius: 10px; background-color: rgb(238, 94, 94); text-align: center; padding: 10px;">
+        <h4 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding: 10px;">
+            ₹{{ TotalMoney }}
+        </h4>
+    </div>
+</div>
+{% endblock base %}

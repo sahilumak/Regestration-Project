@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block base %}
+
+<div class="sidebox2">
+    <div class="chart-container">
+        <div class="chart">
+            <h3 id="nameHeading" style="display: none;">Expense</h3>
+            <img id="namePieChart" src="" alt="Expense by Name" style="display: none;">
+        </div>
+        <div class="chart">
+            <h3 id="descriptionHeading" style="display: none;">Expenses with Description</h3>
+            <img id="descriptionPieChart" src="" alt="Expense by Description" style="display: none;">
+        </div>
+    </div>
+    <div class="button-container">
+        <button onclick="loadNamePieChart()">Load Expenses Pie Chart</button>
+        <button onclick="loadDescriptionPieChart()">Load Description Pie Chart</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='visual.js') }}"></script>
+
+{% endblock base%}

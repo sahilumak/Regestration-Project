@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block base %}
+<div class="container my-4">
+    <h3>Search Results for "{{ query }}"</h3>
+
+    {% if results %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Expense</th>
+                    <th>Money</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ result.expenses }}</td>
+                    <td>{{ result.money }}</td>
+                    <td>{{ result.time }}</td>
+                    <td>{{ result.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No results found for "{{ query }}".</p>
+    {% endif %}
+</div>
+{% endblock %}
